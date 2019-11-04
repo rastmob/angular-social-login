@@ -11,7 +11,7 @@ export class FacebookService {
       .load("//connect.facebook.net/en-US/sdk.js", "script")
       .subscribe(() => {
         FB.init({
-          appId: "",
+          appId: "360217428004899",
           cookie: true,
           xfbml: true,
           version: "v3.0"
