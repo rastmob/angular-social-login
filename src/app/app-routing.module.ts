@@ -1,12 +1,15 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { LayoutPrimaryComponent } from "./components/shared/layout/layout-primary/layout-primary.component";
+import { DummyComponent } from "./dummy.component";
 
 const routes: Routes = [
+  { path: "", redirectTo: "/auth/login", pathMatch: "full" },
   {
     path: "auth",
+    component: DummyComponent,
     loadChildren: () => import("./auth/auth.module").then((m) => m.AuthModule)
-  }
+  },
+  { path: "", redirectTo: "/auth/login", pathMatch: "full" }
 ];
 
 @NgModule({
