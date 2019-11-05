@@ -4,3 +4,39 @@
   justify-content: center;
   align-items: center;
 }
+
+ul.topbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topbar li {
+  float: left;
+}
+ul.topbar li a {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px 14px;
+}
+
+ul.topbar li a:hover:not(.active) {
+  background-color: #111111;
+}
+ul.topbar li a.active {
+  background-color: #f4c205;
+}
+
+ul.topbar li.right {
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topbar li.right,
+  ul.topnav li {
+    float: left;
+  }
+}
