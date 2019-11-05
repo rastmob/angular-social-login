@@ -25,4 +25,8 @@ export class LoginComponent implements OnInit {
       });
     });
   }
+
+  loginWithGoogle() {
+    alert("Under construction..");
+  }
 }

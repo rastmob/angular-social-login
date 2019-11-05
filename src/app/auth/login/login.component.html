@@ -1,21 +1,15 @@
-<form class="login100-form validate-form flex-sb flex-w">
-  <span class="login100-form-title p-b-53">
+<form>
+  <span>
     Sign In With
   </span>
 
-  <a
-    href="javascript:void(0)"
-    (click)="loginWithFacebook()"
-    class="btn-face m-b-20"
-  >
-    <i class="fa fa-facebook" aria-hidden="true"></i>
-
+  <a class="facebook" href="javascript:void(0)" (click)="loginWithFacebook()">
+    <i class="fab fa-facebook"></i>
     Facebook
   </a>
-  <i class="fa fa-facebook" aria-hidden="true"></i>
 
-  <a href="#" class="btn-google m-b-20">
-    <i class="fa fa-google"></i>
+  <a class="google" href="javascript:void(0)" (click)="loginWithGoogle()">
+    <i class="fab fa-google"></i>
     Google
   </a>
 </form>
