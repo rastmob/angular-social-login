@@ -24,7 +24,7 @@ ul.topbar li a:hover:not(.active) {
   background-color: #111111;
 }
 ul.topbar li a.active {
-  background-color: #f4c205;
+  background-color: #1da1f2;
 }
 ul.topbar li.right {
   float: right;

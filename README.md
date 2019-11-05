@@ -1,14 +1,21 @@
-# OnestackAngular
+# Angular Social (ngx-social)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
+Angular Social is a library to help you to implement social authentication to your application.
 
-## Development server
+## Social Platform
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [x] Facebook
+- [ ] Google
+- [ ] Twitter
 
-## Code scaffolding
+## Roadmap
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [x] Craft base for Angular
+- [x] Implement Auth base
+- [x] Implement Facebook demo example
+- [ ] Publish Medium/Blog post about it
+- [ ] Craft Demo examples
+- [ ] Finish Tests
 
 ## Build
 
