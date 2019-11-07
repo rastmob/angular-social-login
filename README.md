@@ -15,6 +15,7 @@ Angular Social is a library to help you to implement social authentication to yo
 - [x] Craft base for Angular
 - [x] Implement Auth base
 - [x] Implement Facebook demo example
+- [ ] Release as a Library
 - [ ] Publish Medium/Blog post about it
 - [ ] Craft Demo examples
 - [ ] Finish Tests
