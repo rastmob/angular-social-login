@@ -1,18 +1,19 @@
 import { Injectable } from "@angular/core";
 import { LazyLoadService } from "./lazy-load.service";
 import { Observable, Subject } from "rxjs";
-declare const GO: any;
+declare const gapi;
 @Injectable({
   providedIn: "root"
 })
 export class GoogleService {
   public auth2: any;
+
   constructor(private lazyLoadService: LazyLoadService) {
     this.lazyLoadService
       .load(`https://apis.google.com/js/platform.js`, "script")
       .subscribe(() => {
-        GO.load("auth2", () => {
-          this.auth2 = GO.auth2.init({
+        gapi.load("auth2", () => {
+          this.auth2 = gapi.auth2.init({
             fetch_basic_profile: false,
             scope: "profile email",
             client_id:
@@ -24,10 +25,11 @@ export class GoogleService {
 
   signIn(): Observable<any> {
     const result = new Subject();
+
     this.auth2.signIn({ scope: "profile email" }).then(
       () => {
-        const gToken = this.auth2.currentUser.get().getAuthResponse(true);
-        result.next(gToken);
+        const googleToken = this.auth2.currentUser.get().getAuthResponse(true);
+        result.next(googleToken);
         result.complete();
       },
       function(fail) {
@@ -35,6 +37,7 @@ export class GoogleService {
         result.complete();
       }
     );
+
     return result;
   }
 }

@@ -1,16 +1,25 @@
-import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy
+} from "@angular/core";
 import { FacebookService } from "src/app/components/shared/services/facebook.service";
+import { GoogleService } from "src/app/components/shared/services/google.service";
 
 declare const FB: any;
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.sass"]
+  styleUrls: ["./login.component.sass"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
+  googleAuth: string;
   constructor(
     private cdRef: ChangeDetectorRef,
-    private facebookService: FacebookService
+    private facebookService: FacebookService,
+    private googleService: GoogleService
   ) {}
 
   ngOnInit() {}
@@ -27,6 +36,13 @@ export class LoginComponent implements OnInit {
   }
 
   loginWithGoogle() {
-    alert("Under construction..");
+    this.googleService.signIn().subscribe((res) => {
+      this.googleAuth = res;
+      let profile = this.googleService.auth2.currentUser
+        .get()
+        .getBasicProfile();
+      console.log(profile.getName() || "");
+      this.cdRef.detectChanges();
+    });
   }
 }
