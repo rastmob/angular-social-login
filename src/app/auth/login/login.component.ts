@@ -6,6 +6,7 @@ import {
 } from "@angular/core";
 import { FacebookService } from "src/app/components/shared/services/facebook.service";
 import { GoogleService } from "src/app/components/shared/services/google.service";
+import { Router } from "@angular/router";
 
 declare const FB: any;
 @Component({
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private cdRef: ChangeDetectorRef,
     private facebookService: FacebookService,
-    private googleService: GoogleService
+    private googleService: GoogleService,
+    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -30,7 +32,8 @@ export class LoginComponent implements OnInit {
 
       FB.api(`/me?fields=name,link`, (fbUser: any) => {
         console.log(fbUser.name);
-        this.cdRef.detectChanges();
+        console.log(fbUser);
+        this.router.navigate(["/auth/profile", { name: fbUser.name }]);
       });
     });
   }

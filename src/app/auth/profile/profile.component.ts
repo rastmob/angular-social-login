@@ -12,6 +12,8 @@ export class ProfileComponent implements OnInit {
     email: "mehmetakifalp@gmail.com"
   };
 
+  dummy: any;
+
   constructor() {}
 
   ngOnInit() {}
