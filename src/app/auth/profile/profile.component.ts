@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { User } from "src/app/components/shared/models/user";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-profile",
@@ -12,9 +13,10 @@ export class ProfileComponent implements OnInit {
     email: "mehmetakifalp@gmail.com"
   };
 
-  dummy: any;
+  constructor(private route: ActivatedRoute) {}
 
-  constructor() {}
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.userModel.name = this.route.snapshot.params["name"];
+    this.userModel.email = this.route.snapshot.params["email"];
+  }
 }

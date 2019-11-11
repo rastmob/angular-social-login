@@ -30,10 +30,10 @@ export class LoginComponent implements OnInit {
     this.facebookService.signIn().subscribe((res) => {
       console.log(res);
 
-      FB.api(`/me?fields=name,link`, (fbUser: any) => {
+      FB.api(`/me?fields=name,email`, (fbUser: any) => {
         console.log(fbUser.name);
         console.log(fbUser);
-        this.router.navigate(["/auth/profile", { name: fbUser.name }]);
+        this.router.navigate(["/auth/profile", fbUser.name, fbUser.email]);
       });
     });
   }

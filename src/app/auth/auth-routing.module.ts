@@ -20,7 +20,7 @@ const routes: Routes = [
         component: LogoutComponent
       },
       {
-        path: "profile",
+        path: "profile/:name/:email",
         component: ProfileComponent
       }
     ]
