@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { User } from "src/app/components/shared/models/user";
 
 @Component({
   selector: "app-profile",
@@ -6,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./profile.component.scss"]
 })
 export class ProfileComponent implements OnInit {
-  userModel: any = {
+  userModel: User = {
     name: "Mehmet Alp",
     email: "mehmetakifalp@gmail.com"
   };

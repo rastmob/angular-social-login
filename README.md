@@ -5,7 +5,7 @@ Angular Social is a library to help you to implement social authentication to yo
 ## Social Platform
 
 - [x] Facebook
-- [ ] Google
+- [x] Google
 - [ ] Twitter
 - [ ] LinkedIn
 - [ ] Github
